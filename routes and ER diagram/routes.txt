@@ -1,0 +1,18 @@
+User/host:
+post- user/login
+post- user/register
+
+
+property:
+get-property/all
+post-property/
+get- property/user_id
+get- property/host_id
+patch- property/host_id
+delete- property/host_id
+
+booking:
+post- booking/user_id
+get- booking/user_id
+get- booking/host_id
+patch-booking/host_id (changing status["approved"/"pending"/"rejected"])
