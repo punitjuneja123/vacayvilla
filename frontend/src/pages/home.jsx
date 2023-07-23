@@ -7,7 +7,7 @@ function Home() {
   // let baseURL = "http://localhost:5000";
   const [propertyData, setPropertyData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/property`)
+    fetch(`https://vacayvilla.onrender.com/property`)
       .then((res) => res.json())
       .then((data) => setPropertyData(data))
       .catch((err) => console.log(err));

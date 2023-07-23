@@ -16,7 +16,7 @@ function Host() {
   };
 
   useState(() => {
-    fetch(`http://localhost:5000/property/host/${userID}`, {
+    fetch(`https://vacayvilla.onrender.com/property/host/${userID}`, {
       method: "GET",
       headers: {
         Authorization: localStorage.getItem("token"),

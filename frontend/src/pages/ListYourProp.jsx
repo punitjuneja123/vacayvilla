@@ -39,14 +39,17 @@ function ListYourProp() {
   };
 
   async function listProperty(obj) {
-    let LYP = await fetch(`http://localhost:5000/property/addProperty`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify(obj),
-    });
+    let LYP = await fetch(
+      `https://vacayvilla.onrender.com/property/addProperty`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+        body: JSON.stringify(obj),
+      }
+    );
     if (LYP.status === 200) {
       alert("Property added successful");
     } else {

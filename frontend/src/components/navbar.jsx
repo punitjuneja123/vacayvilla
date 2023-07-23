@@ -9,7 +9,7 @@ import Signup from "./signup";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  let baseURL = "http://localhost:5000";
+  let baseURL = "https://vacayvilla.onrender.com";
   const navigate = useNavigate();
   const [openProfile, setOpenProfile] = useState(false);
   const dropDownHandler = () => {
