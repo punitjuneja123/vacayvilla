@@ -23,7 +23,7 @@ function Login({ openLogin, handleLoginForm, setOpenLogin }) {
             <br />
             <label htmlFor="">Password</label>
             <br />
-            <input type="text" id="password" />
+            <input type="password" id="password" />
             <br />
             <input type="submit" value="Login" name="" id="" />
           </form>

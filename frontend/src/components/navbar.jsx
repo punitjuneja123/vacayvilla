@@ -6,9 +6,11 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import logo from "../logo.png";
 import Login from "./login";
 import Signup from "./signup";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   let baseURL = "http://localhost:5000";
+  const navigate = useNavigate();
   const [openProfile, setOpenProfile] = useState(false);
   const dropDownHandler = () => {
     if (openProfile) {
@@ -16,6 +18,9 @@ const Navbar = () => {
     } else {
       setOpenProfile(true);
     }
+  };
+  const LYPHandle = () => {
+    navigate("/host");
   };
 
   // checking in LS if user is login
@@ -47,9 +52,10 @@ const Navbar = () => {
       },
       body: JSON.stringify(obj),
     });
-    if (userLogin.status == 200) {
+    if (userLogin.status === 200) {
       let token = await userLogin.json();
       localStorage.setItem("token", token.token);
+      localStorage.setItem("user_id", token.user_id);
       setUserLoggedIN(true);
       alert("login successful");
     } else {
@@ -60,6 +66,7 @@ const Navbar = () => {
   // *************************************************Logout functionality*********************************************
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user_id");
     setUserLoggedIN(false);
   };
 
@@ -87,13 +94,13 @@ const Navbar = () => {
       },
       body: JSON.stringify(obj),
     });
-    if (userLogin.status == 200) {
+    if (userLogin.status === 200) {
       alert("user registered");
     } else {
       alert("emailID already exists/something went wrong");
     }
   }
-  
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -110,7 +117,9 @@ const Navbar = () => {
           </button>
         </div>
         <div className="ListProperty_profile">
-          <p className="LYPButton">List your property</p>
+          <p className="LYPButton" onClick={LYPHandle}>
+            List your property
+          </p>
           <div className="profileImg" onClick={dropDownHandler}>
             <MenuRoundedIcon
               style={{
@@ -136,7 +145,7 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4">
               <li>Update profile</li>
               <hr />
-              <li>List your property</li>
+              <li onClick={LYPHandle}>List your property</li>
               <li onClick={logout}>Logout</li>
             </ul>
           </div>

@@ -1,0 +1,30 @@
+.property_Card {
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+}
+.property_Card img {
+  float: left;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.property_details {
+  margin-top: 310px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.property_details > p {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+@media screen and (max-width: 850px) {
+  img {
+    height: 200px;
+  }
+  .property_details {
+  margin-top: 210px;
+}
+}

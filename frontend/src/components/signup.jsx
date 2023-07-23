@@ -35,7 +35,7 @@ function Signup({ openSignup, handleSignupForm, setOpenSignup }) {
             <br />
             <label htmlFor="">Password</label>
             <br />
-            <input type="text" id="password" />
+            <input type="password" id="password" />
             <br />
             <input type="submit" value="Signup" name="" id="" />
           </form>

@@ -73,7 +73,7 @@ def login():
                 token = jwt.encode(payload, os.getenv(
                     'JWT_SECRET'), algorithm='HS256')
 
-                return jsonify({'token': token})
+                return jsonify({'token': token, 'user_id': user[0]})
 
             return 'Invalid username or password', 401
         else:

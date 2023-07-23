@@ -1,0 +1,48 @@
+.LYPNAV {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  background-color: white;
+  padding: 10px 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+.LYPBtnDiv {
+  display: flex;
+  gap: 20px;
+}
+.LYPBtnDiv > p {
+  align-self: center;
+}
+.LYPBtnDiv > button {
+  background-color: #d78e17;
+  padding: 5px 30px;
+  color: white;
+}
+.container {
+  margin-top: 80px;
+}
+.lypBtn {
+  background-color: #d78e17;
+  padding: 5px 30px;
+  margin-top: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+.LYP_Form_Div > form {
+  margin: auto;
+  width: 350px;
+}
+.LYP_Form_Div > form > input[type="submit"] {
+  background-color: #d78e17;
+  color: white;
+  margin-top: 20px;
+}
+.LYP_Form_Div > form > textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+}

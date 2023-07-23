@@ -1,6 +1,7 @@
+from routes.users import users_bp
+from routes.property import property_bp
 from flask import Flask
 from flask_mysqldb import MySQL
-from routes.users import users_bp
 import os
 from dotenv import load_dotenv
 from flask_cors import CORS
@@ -18,13 +19,14 @@ app.config['MYSQL_DB'] = os.getenv('MYSQL_DB')
 mysql = MySQL(app)
 
 
+# routes
 @app.route('/')
 def welcome():
     return 'Welcome to Vacayvilla'
 
 
-# users route
 app.register_blueprint(users_bp, mysql=mysql)
+app.register_blueprint(property_bp, mysql=mysql)
 
 
 if __name__ == '__main__':
